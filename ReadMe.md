@@ -18,28 +18,18 @@ Key business question:
 
 Using Python for data cleaning and feature engineering, and Tableau for data visualization, this project provides actionable insights into customer behavior.
 
+## Data Source
 
-## 🛠️ Tools and Technologies
+The data for this project was sourced from Cyclistic's historical trip data. While the exact Kaggle dataset is not specified, similar datasets can be found on Kaggle, such as the [Divvy Bicycle Sharing Dataset](https://www.kaggle.com/datasets/yingwurenjian/chicago-divvy-bicycle-sharing-data).
 
-- **Python**: For data cleaning, preprocessing, and feature engineering.
-- **Pandas**: Data manipulation and aggregation.
-- **Matplotlib**: For exploratory data analysis.
-- **Tableau**: To design an interactive dashboard and visualize insights.
-- **Jupyter Notebooks**: For documenting and sharing the analysis process.
+## Tools Used
 
-
-## 📊 Key Insights
-
-1. **Usage Trends**:
-   - Members prefer weekday rides, often for commuting.
-   - Casual riders favor weekends and leisure rides.
-   - Afternoon rides are the most popular time of day.
-2. **Seasonal Patterns**:
-   - Peak usage occurs during summer and fall.
-   - Winter sees a significant decline in ridership.
-3. **Ride Type Preferences**:
-   - Classic bikes are more popular among members.
-   - Casual riders often opt for electric or leisurely rides.
+- **Python**: Data cleaning, preprocessing, and analysis
+- **Pandas & NumPy**: Data manipulation and numerical computations
+- **Matplotlib**: Basic data visualization for EDA
+- **Jupyter Notebooks**: Documentation of data cleaning and analysis processes
+- **Tableau**: Creating interactive dashboards and advanced visualizations
+- **Git**: Version control
 
 
 ## 📂 Repository Structure
@@ -71,6 +61,66 @@ Explore the interactive Tableau dashboard to view:
 [**Click here to view the Tableau Dashboard**](https://public.tableau.com/app/profile/srinivas.barla/viz/CYCLISTIC_17336421351400/Dashboard4)
 
 
+## Data Pipeline
+
+### 1. Data Acquisition
+- Downloaded the Cyclistic trip data (likely in CSV format) from the provided source.
+- Stored the raw data files in the `data/raw/` directory.
+
+### 2. Data Cleaning and Preprocessing
+Using Python and Pandas in Jupyter Notebooks (`notebooks/data_cleaning.ipynb`):
+- Loaded the raw CSV files into pandas DataFrames.
+- Handled missing values and removed duplicates.
+- Converted data types (e.g., timestamps to datetime objects).
+- Calculated ride durations and distances.
+- Created new features such as day of week, month, and season.
+- Filtered out outliers or erroneous data points.
+
+### 3. Exploratory Data Analysis (EDA)
+In `notebooks/analysis.ipynb`:
+- Analyzed ride patterns by user type, day of week, month, and season.
+- Investigated ride durations and distances.
+- Explored popular start and end stations.
+- Generated summary statistics and visualizations using matplotlib.
+
+### 4. Feature Engineering
+Created additional features to enhance analysis:
+- Calculated average speed for each ride.
+- Categorized rides based on duration (short, medium, long).
+- Identified peak hours and rush hours.
+
+### 5. Data Visualization with Tableau
+- Imported the cleaned and feature-engineered dataset into Tableau.
+- Created interactive dashboards showcasing:
+  - Ridership trends by time, day, and season.
+  - Ride duration and distance comparisons between member types.
+  - Popular start and end stations.
+  - User behavior patterns.
+
+### 6. Insight Generation
+Analyzed the visualizations to extract key findings and actionable insights.
+
+## Key Insights
+
+1. **Usage Patterns:**
+   - Members tend to use bikes more on weekdays, suggesting commuting purposes.
+   - Casual riders prefer weekend rides, indicating leisure use.
+   - Afternoon rides are most popular across both user types.
+
+2. **Seasonal Trends:**
+   - Summer and fall see peak usage for both member types.
+   - Winter shows a significant decline in ridership, especially among casual users.
+
+3. **Ride Characteristics:**
+   - Members generally take shorter rides compared to casual riders.
+   - Casual riders are more likely to use bikes for longer, leisurely trips.
+
+4. **Popular Stations:**
+   - Identified high-traffic stations for targeted marketing efforts.
+   - Some stations are more popular among casual riders, presenting conversion opportunities.
+
+
 ## ⚖️ License
 
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
